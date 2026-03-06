@@ -1,0 +1,162 @@
+/* Reset */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* Body */
+
+body{
+font-family: 'Segoe UI', sans-serif;
+color:white;
+height:100vh;
+
+/* Animated gradient background */
+background: linear-gradient(-45deg,#ff6a00,#ee0979,#00c6ff,#0072ff);
+background-size:400% 400%;
+animation:gradientBG 12s ease infinite;
+
+scroll-behavior:smooth;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+/* Animated glowing name */
+
+.name{
+font-size:70px;
+font-weight:bold;
+letter-spacing:3px;
+
+background: linear-gradient(90deg,#ffffff,#00f2ff,#ffffff);
+-webkit-background-clip:text;
+color:transparent;
+
+animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* Subtitle */
+
+.subtitle{
+font-size:22px;
+margin-top:10px;
+opacity:0.9;
+}
+
+/* Navigation */
+
+nav{
+position:sticky;
+top:0;
+background:rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
+padding:15px;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+gap:40px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00f2ff;
+transform:scale(1.1);
+}
+
+/* Sections */
+
+.section{
+max-width:900px;
+margin:auto;
+padding:80px 20px;
+
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Cards */
+
+.card{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
+padding:25px;
+margin:25px 0;
+border-radius:15px;
+
+backdrop-filter:blur(10px);
+
+transition:0.4s;
+}
+
+/* Card hover animation */
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Links */
+
+a{
+color:#00f2ff;
+}
+
+/* Animations */
+
+/* Moving background */
+
+@keyframes gradientBG{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* Glow animation */
+
+@keyframes glow{
+
+from{
+filter: drop-shadow(0 0 10px #00f2ff);
+}
+
+to{
+filter: drop-shadow(0 0 25px #ff00ff);
+}
+
+}
