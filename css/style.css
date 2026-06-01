@@ -1,162 +1,126 @@
-/* Reset */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Body */
-
-body{
-font-family: 'Segoe UI', sans-serif;
-color:white;
-height:100vh;
-
-/* Animated gradient background */
-background: linear-gradient(-45deg,#ff6a00,#ee0979,#00c6ff,#0072ff);
-background-size:400% 400%;
-animation:gradientBG 12s ease infinite;
-
-scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Hero */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+body {
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: aquamarine;
+    padding: 20px;
 }
 
-/* Animated glowing name */
-
-.name{
-font-size:70px;
-font-weight:bold;
-letter-spacing:3px;
-
-background: linear-gradient(90deg,#ffffff,#00f2ff,#ffffff);
--webkit-background-clip:text;
-color:transparent;
-
-animation: glow 3s ease-in-out infinite alternate;
+/* =========================
+   NAVBAR (TOP RIGHT FIXED)
+========================= */
+.navbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
 }
 
-/* Subtitle */
-
-.subtitle{
-font-size:22px;
-margin-top:10px;
-opacity:0.9;
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-/* Navigation */
-
-nav{
-position:sticky;
-top:0;
-background:rgba(0,0,0,0.3);
-backdrop-filter:blur(10px);
-padding:15px;
+.navbar a {
+    text-decoration: none;
+    color: aquamarine;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-nav ul{
-display:flex;
-justify-content:center;
-gap:40px;
-list-style:none;
+.navbar a:hover {
+    color: white;
 }
 
-nav a{
-text-decoration:none;
-color:white;
-font-weight:600;
-transition:0.3s;
+/* =========================
+   HEADER SECTION
+========================= */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 80px; /* space for fixed nav */
 }
 
-nav a:hover{
-color:#00f2ff;
-transform:scale(1.1);
+.student_name {
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
-/* Sections */
-
-.section{
-max-width:900px;
-margin:auto;
-padding:80px 20px;
-
-opacity:0;
-transform:translateY(40px);
-transition:1s;
+.student_intro {
+    font-size: 1.1rem;
+    line-height: 1.5;
 }
 
-.section.show{
-opacity:1;
-transform:translateY(0);
+/* IMAGE */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid aquamarine;
 }
 
-/* Cards */
-
-.card{
-background:rgba(255,255,255,0.08);
-border:1px solid rgba(255,255,255,0.15);
-padding:25px;
-margin:25px 0;
-border-radius:15px;
-
-backdrop-filter:blur(10px);
-
-transition:0.4s;
+/* =========================
+   CONTENT SECTIONS
+========================= */
+.content {
+    margin-top: 40px;
 }
 
-/* Card hover animation */
-
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 20px 40px rgba(0,0,0,0.4);
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid aquamarine;
+    border-radius: 10px;
 }
 
-/* Links */
-
-a{
-color:#00f2ff;
+section h2 {
+    color: white;
+    margin-bottom: 10px;
 }
 
-/* Animations */
-
-/* Moving background */
-
-@keyframes gradientBG{
-
-0%{
-background-position:0% 50%;
+section p {
+    line-height: 1.6;
 }
 
-50%{
-background-position:100% 50%;
+/* EMAIL */
+section a {
+    color: white;
+    text-decoration: none;
 }
 
-100%{
-background-position:0% 50%;
+section a:hover {
+    color: aquamarine;
 }
 
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid aquamarine;
+
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
 }
 
-/* Glow animation */
-
-@keyframes glow{
-
-from{
-filter: drop-shadow(0 0 10px #00f2ff);
+.profile-pic:hover {
+    transform: scale(1.1);
 }
 
-to{
-filter: drop-shadow(0 0 25px #ff00ff);
-}
-
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
